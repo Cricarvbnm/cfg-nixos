@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./modules/lsd.nix ];
+  imports = [ ./modules/lsd.nix ./modules/kitty.nix ];
 
   environment.systemPackages = with pkgs; [ bat curl aria2 tree ];
 

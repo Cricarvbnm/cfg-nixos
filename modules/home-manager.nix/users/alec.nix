@@ -1,1 +1,1 @@
-{ ... }: { }
+{ ... }: { imports = [ ../modules/de.nix ]; }
