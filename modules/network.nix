@@ -1,7 +1,6 @@
 { ... }: {
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking = {
-    hostName = "nixos";
+    hostName = "alec-nixos";
     networkmanager = { enable = true; };
     proxy = {
       default = "http://192.168.122.1:7890";
