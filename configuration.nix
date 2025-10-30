@@ -9,16 +9,11 @@
     ./modules/users.nix
     ./modules/git.nix
     ./modules/shell.nix
+    ./modules/ssh.nix
+    ./modules/de.nix
 
     ./modules/home-manager.nix
   ];
-
-  environment.systemPackages = with pkgs; [ kitty ];
-
-  services.openssh = {
-    enable = true;
-    settings = { PermitRootLogin = "yes"; };
-  };
 
   system.stateVersion = "25.05";
 }
