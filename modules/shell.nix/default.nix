@@ -1,13 +1,7 @@
 { pkgs, ... }: {
   imports = [ ./modules/lsd.nix ];
 
-  environment.systemPackages = with pkgs; [
-    bat
-    curl
-    aria2
-    ffmpeg-normalize
-    tree
-  ];
+  environment.systemPackages = with pkgs; [ bat curl aria2 tree ];
 
   programs = {
     zsh = {
