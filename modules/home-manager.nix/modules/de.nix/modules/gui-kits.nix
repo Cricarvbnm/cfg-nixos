@@ -1,4 +1,12 @@
 { config, pkgs, ... }: {
+  home.pointerCursor = {
+    enable = true;
+    name = "Catppuccin Macchiato Blue";
+    package = pkgs.catppuccin-cursors.macchiatoBlue;
+
+    gtk.enable = true;
+  };
+
   gtk = {
     enable = true;
     font = {
@@ -12,11 +20,13 @@
     };
   };
 
-  home.pointerCursor = {
+  home.packages = with pkgs; [ qt6ct catppuccin-kvantum ];
+  qt = {
     enable = true;
-    name = "Catppuccin Macchiato Blue";
-    package = pkgs.catppuccin-cursors.macchiatoBlue;
-
-    gtk.enable = true;
+    platformTheme.name = "qtct";
+    style = {
+      name = "kvantum";
+      # package = pkgs.qtstyleplugin-kvantum; # Auto Detect
+    };
   };
 }
