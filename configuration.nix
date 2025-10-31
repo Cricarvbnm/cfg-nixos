@@ -13,6 +13,7 @@
     ./modules/nixpkgs.nix
     ./modules/keybindings.nix
     ./modules/i18n.nix
+    ./modules/fonts.nix
 
     ./modules/home-manager.nix
   ];
