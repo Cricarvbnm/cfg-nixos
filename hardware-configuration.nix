@@ -1,7 +1,7 @@
-{ config, lib, inputs, pkgs, ... }:
+{ config, lib, ... }:
 
 {
-  imports = [ inputs.nixos-hardware.nixosModules.asus-fx506hm ];
+  imports = [ <nixos-hardware/asus/fx506hm> ];
 
   # Intel iGPU
   hardware.enableRedistributableFirmware = true;

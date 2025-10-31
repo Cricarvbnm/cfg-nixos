@@ -1,5 +1,5 @@
-{ inputs, ... }: {
-  imports = [ inputs.home-manager.nixosModules.home-manager ];
+{ ... }: {
+  imports = [ <home-manager/nixos> ];
 
   home-manager = {
     sharedModules = [ ./modules/home-manager.nix ./modules/test.nix ]
