@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ ... }: {
   imports = [
     ./hardware-configuration.nix
     ./modules/nix.nix
@@ -12,6 +12,7 @@
     ./modules/de.nix
     ./modules/nixpkgs.nix
     ./modules/keybindings.nix
+    ./modules/i18n.nix
 
     ./modules/home-manager.nix
   ];
