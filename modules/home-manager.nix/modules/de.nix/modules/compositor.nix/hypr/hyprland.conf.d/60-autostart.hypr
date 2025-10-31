@@ -1,0 +1,2 @@
+exec-once = xdg-launch waybar
+exec-once = xdg-launch waybar-bot

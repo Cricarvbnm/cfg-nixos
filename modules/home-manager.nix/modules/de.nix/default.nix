@@ -9,5 +9,6 @@
     ./modules/clipboard.nix
     ./modules/torrent.nix
     ./modules/gui-kits.nix
+    ./modules/bar.nix
   ];
 }

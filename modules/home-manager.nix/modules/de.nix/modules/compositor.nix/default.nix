@@ -1,5 +1,14 @@
 { config, pkgs, ... }: {
-  home.packages = with pkgs; [ hyprshot ];
+  imports = [
+    ../bar.nix
+    ../browser.nix
+    ../clipboard.nix
+    ../file-manager.nix
+    ../menu.nix
+    ../notification.nix
+  ];
+
+  home.packages = with pkgs; [ hyprshot xdg-launch ];
 
   wayland.windowManager.hyprland = {
     enable = true;
