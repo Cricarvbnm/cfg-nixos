@@ -7,6 +7,10 @@
   hardware.enableRedistributableFirmware = true;
   boot.kernelParams = [ "i915.enable_guc=3" ];
 
+  # Bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   # Others
   boot.initrd.availableKernelModules =
     [ "vmd" "xhci_pci" "thunderbolt" "nvme" "usb_storage" "usbhid" "sd_mod" ];
