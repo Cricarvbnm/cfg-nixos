@@ -3,6 +3,22 @@
 {
   imports = [ inputs.nixos-hardware.nixosModules.asus-fx506hm ];
 
+  # Graphic
+  services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vpl-gpu-rt
+      intel-compute-runtime
+    ];
+  };
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
+
+  hardware.enableRedistributableFirmware = true;
+  boot.kernelParams = [ "i915.enable_guc=3" ];
+
+  # Others
   boot.initrd.availableKernelModules =
     [ "vmd" "xhci_pci" "thunderbolt" "nvme" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
