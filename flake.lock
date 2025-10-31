@@ -7,48 +7,49 @@
         ]
       },
       "locked": {
-        "lastModified": 1761878381,
-        "narHash": "sha256-lCRaipHgszaFZ1Cs8fdGJguVycCisBAf2HEFgip5+xU=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "4ac96eb21c101a3e5b77ba105febc5641a8959aa",
-        "type": "github"
+        "lastModified": 1758463745,
+        "narHash": "sha256-uhzsV0Q0I9j2y/rfweWeGif5AWe0MGrgZ/3TjpDYdGA=",
+        "ref": "release-25.05",
+        "rev": "3b955f5f0a942f9f60cdc9cacb7844335d0f21c3",
+        "revCount": 4813,
+        "type": "git",
+        "url": "ssh://git@github.com/nix-community/home-manager"
       },
       "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
+        "ref": "release-25.05",
+        "type": "git",
+        "url": "ssh://git@github.com/nix-community/home-manager"
       }
     },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1761827175,
         "narHash": "sha256-XdPVSYyIBK4/ruoqujaQmmSGg3J2/EenexV9IEXhr6o=",
-        "owner": "NixOS",
-        "repo": "nixos-hardware",
+        "ref": "refs/heads/master",
         "rev": "43ffe9ac82567512abb83187cb673de1091bdfa8",
-        "type": "github"
+        "revCount": 2477,
+        "type": "git",
+        "url": "ssh://git@github.com/NixOS/nixos-hardware"
       },
       "original": {
-        "owner": "NixOS",
-        "repo": "nixos-hardware",
-        "type": "github"
+        "type": "git",
+        "url": "ssh://git@github.com/NixOS/nixos-hardware"
       }
     },
     "nixpkgs": {
       "locked": {
         "lastModified": 1761597516,
         "narHash": "sha256-wxX7u6D2rpkJLWkZ2E932SIvDJW8+ON/0Yy8+a5vsDU=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
+        "ref": "nixos-25.05",
         "rev": "daf6dc47aa4b44791372d6139ab7b25269184d55",
-        "type": "github"
+        "revCount": 811874,
+        "type": "git",
+        "url": "ssh://git@github.com/NixOS/nixpkgs"
       },
       "original": {
-        "owner": "NixOS",
         "ref": "nixos-25.05",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "git",
+        "url": "ssh://git@github.com/NixOS/nixpkgs"
       }
     },
     "root": {
