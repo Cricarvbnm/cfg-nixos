@@ -1,8 +1,7 @@
-{ ... }: {
-  imports = [ <home-manager/nixos> ];
+{ inputs, ... }: {
+  imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   home-manager = {
-    backupFileExtension = "bak";
     sharedModules = [ ./modules/home-manager.nix ./modules/test.nix ]
       ++ [ ./modules/nvim.nix ./modules/shell.nix ];
     users = {

@@ -5,9 +5,6 @@
     email = "alecvbnm@outlook.com"
     name = "Alec"
 
-[http]
-    proxy = "http://192.168.122.1:7890"
-
 [alias]
     a = "add"
     aa = "add --all"
