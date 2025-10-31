@@ -15,6 +15,22 @@
   xdg.configFile."hypr/hyprland.conf.d".source =
     config.lib.file.mkOutOfStoreSymlink ./hypr/hyprland.conf.d;
 
-  # Hyprpolkit
-  services.hyprpolkitagent.enable = true;
+  services = {
+    # Hyprpolkit
+    hyprpolkitagent.enable = true;
+
+    # Wallpaper
+    hyprpaper = {
+      enable = true;
+      settings =
+        let wallpaper = "/storage/General/Pictures/Wallpaper/133666467_p0.png";
+        in {
+          preload = [ wallpaper ];
+          wallpaper = [ ", ${wallpaper}" ];
+
+          ipc = "on";
+          splash = false;
+        };
+    };
+  };
 }
