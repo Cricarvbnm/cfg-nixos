@@ -14,6 +14,7 @@
     ./modules/keybindings.nix
     ./modules/i18n.nix
     ./modules/fonts.nix
+    ./modules/samba.nix
 
     ./modules/home-manager.nix
   ];
