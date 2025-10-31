@@ -8,7 +8,7 @@
     ../notification.nix
   ];
 
-  home.packages = with pkgs; [ hyprshot xdg-launch ];
+  home.packages = with pkgs; [ hyprshot xdg-launch networkmanagerapplet ];
 
   wayland.windowManager.hyprland = {
     enable = true;
