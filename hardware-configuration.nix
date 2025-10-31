@@ -18,40 +18,59 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/a3417677-b806-4581-aba1-6033792a24c5";
-    fsType = "btrfs";
-    options = [ "subvol=@" ];
-  };
+  fileSystems = {
+    # System
+    "/" = {
+      label = "nixos";
+      fsType = "btrfs";
+      options = [ "subvol=@" ];
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/6C2B-1A50";
-    fsType = "vfat";
-    options = [ "fmask=0022" "dmask=0022" ];
-  };
+    "/boot" = {
+      label = "ESP";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
 
-  fileSystems."/home/alec" = {
-    device = "/dev/disk/by-uuid/a3417677-b806-4581-aba1-6033792a24c5";
-    fsType = "btrfs";
-    options = [ "subvol=home/alec/@" ];
-  };
+    "/var" = {
+      label = "nixos";
+      fsType = "btrfs";
+      options = [ "subvol=@var" ];
+    };
 
-  fileSystems."/home/alec/.cache" = {
-    device = "/dev/disk/by-uuid/a3417677-b806-4581-aba1-6033792a24c5";
-    fsType = "btrfs";
-    options = [ "subvol=home/alec/@.cache" ];
-  };
+    # Nix
 
-  fileSystems."/var" = {
-    device = "/dev/disk/by-uuid/a3417677-b806-4581-aba1-6033792a24c5";
-    fsType = "btrfs";
-    options = [ "subvol=@var" ];
-  };
+    "/nix" = {
+      label = "nixos";
+      fsType = "btrfs";
+      options = [ "subvol=@nix" ];
+    };
 
-  fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/a3417677-b806-4581-aba1-6033792a24c5";
-    fsType = "btrfs";
-    options = [ "subvol=@nix" ];
+    # Home Alec
+    "/home/alec" = {
+      label = "nixos";
+      fsType = "btrfs";
+      options = [ "subvol=home/alec/@" ];
+    };
+
+    "/home/alec/.cache" = {
+      label = "nixos";
+      fsType = "btrfs";
+      options = [ "subvol=home/alec/@.cache" ];
+    };
+
+    # Storage
+    "/storage" = {
+      label = "storage";
+      fsType = "btrfs";
+      options = [ "subvol=@" ];
+    };
+
+    "/storage/.snapshots" = {
+      label = "storage";
+      fsType = "btrfs";
+      options = [ "subvol=@.snapshots" ];
+    };
   };
 
   swapDevices = [ ];
