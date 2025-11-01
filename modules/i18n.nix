@@ -16,6 +16,10 @@
           # GUI
           fcitx5-gtk
           catppuccin-fcitx5
+
+          # Dictionaries
+          fcitx5-pinyin-zhwiki
+          fcitx5-pinyin-moegirl
         ];
 
         settings = {
