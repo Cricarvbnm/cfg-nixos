@@ -8,7 +8,15 @@
       type = "fcitx5";
       fcitx5 = {
         waylandFrontend = true;
-        addons = with pkgs; [ fcitx5-gtk fcitx5-mozc fcitx5-chinese-addons ];
+        addons = with pkgs; [
+          # Methods
+          fcitx5-mozc
+          fcitx5-chinese-addons
+
+          # GUI
+          fcitx5-gtk
+          catppuccin-fcitx5
+        ];
       };
     };
   };
