@@ -16,6 +16,7 @@
     ./modules/fonts.nix
     ./modules/samba.nix
     ./modules/docker.nix
+    ./modules/virtual.nix
 
     ./modules/home-manager.nix
   ];
