@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
-    ./modules/compositor.nix
+    ./modules/hypr.nix
     ./modules/terminal.nix
     ./modules/notification.nix
     ./modules/file-manager.nix
