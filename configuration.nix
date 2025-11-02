@@ -17,6 +17,7 @@
     ./modules/samba.nix
     ./modules/docker.nix
     ./modules/virtual.nix
+    ./modules/system.nix
 
     ./modules/home-manager.nix
   ];
