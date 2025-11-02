@@ -1,4 +1,4 @@
 { ... }: {
   virtualisation.docker = { enable = true; };
-  users.users.alec.extraGroups = [ "docker" ];
+  users.groups.docker.members = [ "alec" ];
 }
