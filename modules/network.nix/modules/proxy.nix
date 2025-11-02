@@ -1,13 +1,5 @@
 { ... }:
-{
-  networking = {
-    hostName = "alec-nixos";
-    networkmanager = { enable = true; };
-  };
-
-}
-# Proxy
-// (let proxyPort = 7890;
+let proxyPort = 7890;
 in {
   programs.clash-verge = {
     enable = true;
@@ -23,4 +15,4 @@ in {
       allowedUDPPorts = [ proxyPort ];
     };
   };
-})
+}
