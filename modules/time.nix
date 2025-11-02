@@ -1,1 +1,6 @@
-{ ... }: { time.timeZone = "Asia/Shanghai"; }
+{ ... }: {
+  time = {
+    timeZone = "Asia/Shanghai";
+    hardwareClockInLocalTime = true;
+  };
+}
