@@ -1,5 +1,5 @@
 { ... }: {
-  imports = [ ./modules/vfio.nix ];
+  imports = [ ./modules/vfio.nix ./modules/looking-glass.nix ];
 
   programs.virt-manager.enable = true;
 
@@ -10,7 +10,6 @@
 
   users.groups = {
     libvirtd.members = [ "alec" ];
-    groups.kvm.members = [ "alec" ];
+    kvm.members = [ "alec" ];
   };
-
 }
