@@ -6,7 +6,7 @@ in {
     extraModulePackages = [ config.boot.kernelPackages.kvmfr ];
     kernelModules = [ "kvmfr" ];
     extraModprobeConfig = ''
-      options kvmfr static_size_mb=${shmSize}
+      options kvmfr static_size_mb=${toString shmSize}
     '';
   };
 
