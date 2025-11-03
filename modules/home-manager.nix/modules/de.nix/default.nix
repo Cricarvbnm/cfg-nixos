@@ -10,5 +10,6 @@
     ./modules/torrent.nix
     ./modules/gui-kits.nix
     ./modules/bar.nix
+    ./modules/dev.nix
   ];
 }
