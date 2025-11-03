@@ -63,7 +63,7 @@
     "/storage" = {
       label = "storage";
       fsType = "btrfs";
-      options = [ "subvol=@" ];
+      options = [ "subvol=@" "x-gvfs-trash" ];
     };
 
     "/storage/.snapshots" = {

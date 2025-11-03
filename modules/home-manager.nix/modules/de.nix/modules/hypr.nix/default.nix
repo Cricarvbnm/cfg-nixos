@@ -3,7 +3,6 @@
     ../bar.nix
     ../browser.nix
     ../clipboard.nix
-    ../file-manager.nix
     ../menu.nix
     ../notification.nix
   ];
