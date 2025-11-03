@@ -5,4 +5,6 @@
     operation = "boot";
     dates = "00:00";
   };
+
+  services.logind.lidSwitch = "ignore";
 }
