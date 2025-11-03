@@ -18,6 +18,8 @@
     ./modules/docker.nix
     ./modules/virtual.nix
     ./modules/system.nix
+    ./modules/programs.nix
+    ./modules/dev.nix
 
     ./modules/home-manager.nix
   ];
