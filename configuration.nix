@@ -20,6 +20,7 @@
     ./modules/system.nix
     ./modules/programs.nix
     ./modules/dev.nix
+    ./modules/archive.nix
 
     ./modules/home-manager.nix
   ];
