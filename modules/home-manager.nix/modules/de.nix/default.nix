@@ -10,5 +10,6 @@
     ./modules/gui-kits.nix
     ./modules/bar.nix
     ./modules/dev.nix
+    ./modules/video.nix
   ];
 }
