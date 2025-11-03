@@ -9,14 +9,22 @@
 
   gtk = {
     enable = true;
+
     font = {
       name = "Noto Serif CJK SC";
       package = pkgs.noto-fonts-cjk-serif;
     };
+
     cursorTheme = { inherit (config.home.pointerCursor) name package; };
+
     theme = {
       name = "catppuccin-frappe-blue-standard";
       package = pkgs.catppuccin-gtk;
+    };
+
+    iconTheme = {
+      name = "Tela circle dark";
+      package = pkgs.tela-circle-icon-theme;
     };
   };
 
