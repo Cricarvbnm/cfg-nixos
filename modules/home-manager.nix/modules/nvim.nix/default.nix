@@ -18,5 +18,9 @@
     ];
   };
 
+  home.packages = [ pkgs.texlive.combined.scheme-medium ];
+
   xdg.configFile.nvim.source = config.lib.file.mkOutOfStoreSymlink ./nvim;
+  home.file.".latexmkrc".source =
+    config.lib.file.mkOutOfStoreSymlink ./latexmkrc;
 }
