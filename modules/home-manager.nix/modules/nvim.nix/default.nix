@@ -18,7 +18,13 @@
     ];
   };
 
-  home.packages = [ pkgs.texlive.combined.scheme-medium ];
+  home.packages = (with pkgs;
+    let
+      myTexlive = texlive.combine {
+        inherit (texlive) scheme-medium;
+        inherit (texlivePackages) ctex;
+      };
+    in [ myTexlive zathura ]);
 
   xdg.configFile.nvim.source = config.lib.file.mkOutOfStoreSymlink ./nvim;
   home.file.".latexmkrc".source =
