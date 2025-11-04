@@ -11,5 +11,6 @@
     ./modules/bar.nix
     ./modules/dev.nix
     ./modules/video.nix
+    ./modules/pictures.nix
   ];
 }
