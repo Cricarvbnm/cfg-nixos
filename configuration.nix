@@ -21,6 +21,7 @@
     ./modules/dev.nix
     ./modules/archive.nix
     ./modules/games.nix
+    ./modules/flatpak.nix
 
     ./modules/home-manager.nix
   ];
