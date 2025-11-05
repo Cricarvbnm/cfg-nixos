@@ -1,0 +1,3 @@
+[submodule "modules/home-manager.nix/modules/de.nix/modules/terminal.nix/modules/home-manager.nix/modules/de.nix/modules/terminal.nix/kitty"]
+	path = modules/home-manager.nix/modules/de.nix/modules/terminal.nix/modules/home-manager.nix/modules/de.nix/modules/terminal.nix/kitty
+	url = git@github.com:Cricarvbnm/cfg-kitty
