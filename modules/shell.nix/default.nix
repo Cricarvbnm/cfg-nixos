@@ -1,11 +1,21 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   imports = [ ./modules/lsd.nix ./modules/kitty.nix ];
 
-  environment.systemPackages = with pkgs; [ bat curl aria2 tree lsof ];
+  environment.systemPackages = with pkgs; [
+    bat
+    curl
+    aria2
+    tree
+    lsof
+    iftop
+    nethogs
+  ];
 
   programs = {
     zsh = {
       enable = true;
+
+      setOptions = [ "HIST_IGNORE_DUPS" "HIST_FCNTL_LOCK" ];
 
       syntaxHighlighting = {
         enable = true;
