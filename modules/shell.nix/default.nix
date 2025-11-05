@@ -9,6 +9,7 @@
     lsof
     iftop
     nethogs
+    htop
   ];
 
   programs = {
