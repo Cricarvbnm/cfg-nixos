@@ -5,4 +5,6 @@
     hostName = "alec-nixos";
     networkmanager.enable = true;
   };
+
+  services.resolved.enable = true;
 }
