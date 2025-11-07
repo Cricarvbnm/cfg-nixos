@@ -1,5 +1,6 @@
 { pkgs, ... }: {
-  environment.systemPackages = [ pkgs.lsd ];
-
-  programs.zsh.shellAliases = { ls = "lsd"; };
+  environment = {
+    systemPackages = [ pkgs.lsd ];
+    shellAliases.ls = "lsd";
+  };
 }

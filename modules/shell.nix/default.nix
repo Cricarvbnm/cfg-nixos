@@ -1,6 +1,12 @@
-{ pkgs, lib, ... }: {
-  imports = [ ./modules/lsd.nix ./modules/kitty.nix ];
+{ pkgs, ... }: {
+  imports = [
+    ./modules/dev.nix
+    ./modules/git.nix
+    ./modules/keybindings.nix
+    ./modules/lsd.nix
+  ];
 
+  # Packages
   environment.systemPackages = with pkgs; [
     bat
     curl
@@ -12,6 +18,7 @@
     htop
   ];
 
+  # Shell
   programs = {
     zsh = {
       enable = true;
@@ -39,4 +46,6 @@
       presets = [ "nerd-font-symbols" ];
     };
   };
+
+  users.defaultUserShell = pkgs.zsh;
 }

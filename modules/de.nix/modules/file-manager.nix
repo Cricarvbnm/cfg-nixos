@@ -17,5 +17,15 @@
     tumbler.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [ ffmpegthumbnailer mate.engrampa ];
+  environment.systemPackages = with pkgs; [
+    ffmpegthumbnailer
+
+    # Archive
+    mate.engrampa
+    zip
+    unzip
+    p7zip
+    unrar
+    xz
+  ];
 }
