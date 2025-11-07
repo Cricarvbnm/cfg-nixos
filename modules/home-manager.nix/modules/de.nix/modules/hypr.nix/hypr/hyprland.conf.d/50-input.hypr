@@ -3,3 +3,8 @@ input {
   float_switch_override_focus = 0
 }
 
+device {
+  name = asup1205:00-093a:2008-touchpad
+  sensitivity = 0.5
+}
+
