@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 let proxyPort = 7890;
 in {
   programs.clash-verge = {
@@ -14,5 +14,16 @@ in {
       allowedTCPPorts = [ proxyPort ];
       allowedUDPPorts = [ proxyPort ];
     };
+  };
+
+  environment = {
+    etc."tinyproxy/tinyproxy.conf".text = ''
+      Port 7890
+      Listen 127.0.0.1
+      Listen ::1
+      Allow 127.0.0.1
+      Allow ::1
+    '';
+    systemPackages = [ pkgs.tinyproxy ];
   };
 }
