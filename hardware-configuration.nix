@@ -59,6 +59,8 @@
       options = [ "subvol=home/alec/@.cache" ];
     };
 
+    "home/alec/tmp" = { fsType = "tmpfs"; };
+
     # Storage
     "/storage" = {
       label = "storage";
