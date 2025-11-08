@@ -56,6 +56,12 @@ in {
       options = [ "subvol=@var" "compress=zstd" ];
     };
 
+    "/.snapshots" = {
+      label = "nixos";
+      fsType = "btrfs";
+      options = [ "subvol=@.snapshots" "compress=zstd" ];
+    };
+
     # Nix
     "/nix" = {
       label = "nixos";
@@ -74,6 +80,12 @@ in {
       label = "nixos";
       fsType = "btrfs";
       options = [ "subvol=home/alec/@.cache" "compress=zstd" ];
+    };
+
+    "/home/alec/.snapshots" = {
+      label = "nixos";
+      fsType = "btrfs";
+      options = [ "subvol=home/alec/@.snapshots" "compress=zstd" ];
     };
 
     "/home/alec/tmp" = { fsType = "tmpfs"; };

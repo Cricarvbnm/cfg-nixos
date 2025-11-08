@@ -1,5 +1,6 @@
 { ... }: {
   imports = [
+    ./modules/snapper.nix
     ./modules/boot.nix
     ./modules/docker.nix
     ./modules/i18n.nix
