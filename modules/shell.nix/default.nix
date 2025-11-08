@@ -48,4 +48,6 @@
   };
 
   users.defaultUserShell = pkgs.zsh;
+
+  environment.shellAliases = { ns = "nixos-rebuild switch"; };
 }
