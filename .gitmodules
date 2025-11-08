@@ -1,6 +1,9 @@
-[submodule "modules/hm.nix/modules/de.nix/modules/terminal.nix/kitty"]
-	path = modules/hm.nix/modules/de.nix/modules/terminal.nix/kitty
-	url = git@github.com:Cricarvbnm/cfg-kitty
 [submodule "modules/hm.nix/modules/de.nix/modules/notification.nix/swaync"]
 	path = modules/hm.nix/modules/de.nix/modules/notification.nix/swaync
 	url = git@github.com:Cricarvbnm/cfg-swaync
+[submodule "modules/hm.nix/modules/de.nix/modules/terminal.nix/kitty"]
+	path = modules/hm.nix/modules/de.nix/modules/terminal.nix/kitty
+	url = git@github.com:Cricarvbnm/cfg-kitty
+[submodule "modules/hm.nix/modules/de.nix/modules/bar.nix/waybar"]
+	path = modules/hm.nix/modules/de.nix/modules/bar.nix/waybar
+	url = git@github.com:Cricarvbnm/cfg-waybar.git
