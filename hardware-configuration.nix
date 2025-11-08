@@ -41,7 +41,7 @@ in {
     "/" = {
       label = "nixos";
       fsType = "btrfs";
-      options = [ "subvol=@" ];
+      options = [ "subvol=@" "compress=zstd" ];
     };
 
     "/boot" = {
@@ -53,27 +53,27 @@ in {
     "/var" = {
       label = "nixos";
       fsType = "btrfs";
-      options = [ "subvol=@var" ];
+      options = [ "subvol=@var" "compress=zstd" ];
     };
 
     # Nix
     "/nix" = {
       label = "nixos";
       fsType = "btrfs";
-      options = [ "subvol=@nix" ];
+      options = [ "subvol=@nix" "compress=zstd" "noatime" ];
     };
 
     # Home Alec
     "/home/alec" = {
       label = "nixos";
       fsType = "btrfs";
-      options = [ "subvol=home/alec/@" ];
+      options = [ "subvol=home/alec/@" "compress=zstd" ];
     };
 
     "/home/alec/.cache" = {
       label = "nixos";
       fsType = "btrfs";
-      options = [ "subvol=home/alec/@.cache" ];
+      options = [ "subvol=home/alec/@.cache" "compress=zstd" ];
     };
 
     "/home/alec/tmp" = { fsType = "tmpfs"; };
@@ -82,13 +82,13 @@ in {
     "/storage" = {
       label = "storage";
       fsType = "btrfs";
-      options = [ "subvol=@" "x-gvfs-trash" ];
+      options = [ "subvol=@" "compress=zstd" "x-gvfs-trash" ];
     };
 
     "/storage/.snapshots" = {
       label = "storage";
       fsType = "btrfs";
-      options = [ "subvol=@.snapshots" ];
+      options = [ "subvol=@.snapshots" "compress=zstd" ];
     };
   };
 
