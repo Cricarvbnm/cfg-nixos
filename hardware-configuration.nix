@@ -93,5 +93,10 @@ in {
   };
 
   # Swap
-  swapDevices = [ ];
+  fileSystems."/swap" = {
+    label = "nixos";
+    fsType = "btrfs";
+    options = [ "subvol=@swap" "noatime" ];
+  };
+  swapDevices = [{ device = "/swap/swapfile"; }];
 }
