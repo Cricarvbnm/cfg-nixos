@@ -16,3 +16,6 @@
 [submodule "modules/hm.nix/modules/de.nix/modules/video.nix/mpv"]
 	path = modules/hm.nix/modules/de.nix/modules/video.nix/mpv
 	url = git@github.com:Cricarvbnm/cfg-mpv.git
+[submodule "modules/hm.nix/modules/de.nix/modules/niri.nix/niri"]
+	path = modules/hm.nix/modules/de.nix/modules/niri.nix/niri
+	url = git@github.com:Cricarvbnm/cfg-niri.git
