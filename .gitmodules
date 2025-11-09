@@ -13,3 +13,6 @@
 [submodule "modules/hm.nix/modules/shell.nix/modules/nvim.nix/nvim"]
 	path = modules/hm.nix/modules/shell.nix/modules/nvim.nix/nvim
 	url = git@github.com:Cricarvbnm/cfg-AstroNvim.git
+[submodule "modules/hm.nix/modules/de.nix/modules/video.nix/mpv"]
+	path = modules/hm.nix/modules/de.nix/modules/video.nix/mpv
+	url = git@github.com:Cricarvbnm/cfg-mpv.git
