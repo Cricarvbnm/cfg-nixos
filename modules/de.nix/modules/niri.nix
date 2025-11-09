@@ -11,10 +11,5 @@
   };
 
   # For default config
-  environment.systemPackages = with pkgs; [
-    alacritty
-    fuzzel
-    xwayland-satellite
-  ];
-  security.polkit.enable = true;
+  environment.systemPackages = with pkgs; [ xwayland-satellite ];
 }
