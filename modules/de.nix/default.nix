@@ -2,6 +2,7 @@
   imports = [
     ./modules/display-manager.nix
     ./modules/hyprland.nix
+    ./modules/niri.nix
 
     ./modules/vm.nix
     ./modules/file-manager.nix
