@@ -10,6 +10,5 @@
     };
   };
 
-  # For default config
   environment.systemPackages = with pkgs; [ xwayland-satellite ];
 }
