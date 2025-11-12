@@ -4,6 +4,7 @@
     ./modules/hyprland.nix
     ./modules/niri.nix
 
+    ./modules/sunshine.nix
     ./modules/waydroid.nix
     ./modules/vm.nix
     ./modules/file-manager.nix
