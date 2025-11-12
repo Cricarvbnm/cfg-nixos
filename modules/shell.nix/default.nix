@@ -16,6 +16,10 @@
     iftop
     nethogs
     htop
+    nix-output-monitor
+    file
+    ffmpeg-headless
+    tldr
   ];
 
   # Shell
