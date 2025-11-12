@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ./modules/snapper.nix
     ./modules/boot.nix
@@ -23,4 +23,6 @@
   };
 
   services.logind.lidSwitch = "ignore";
+
+  environment.systemPackages = with pkgs; [ ntfs3g ];
 }
