@@ -11,8 +11,9 @@
     ./modules/ssh.nix
     ./modules/time.nix
     ./modules/users.nix
+    ./modules/cachix.nix
 
-    ./modules/vfio.nix
+    # ./modules/vfio.nix
   ];
 
   system.autoUpgrade = {

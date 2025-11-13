@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let proxyPort = 7890;
 in {
   networking = {
@@ -36,5 +36,5 @@ in {
 
   # Nix store in CN net
   nix.settings.substituters =
-    [ "https://mirrors.cernet.edu.cn/nix-channels/store" ];
+    lib.mkBefore [ "https://mirrors.cernet.edu.cn/nix-channels/store" ];
 }
