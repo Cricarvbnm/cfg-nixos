@@ -1,7 +1,7 @@
 { pkgs, config, lib, ... }: {
   imports = [
     ./modules/display-manager.nix
-    ./modules/hyprland.nix
+    # ./modules/hyprland.nix
     ./modules/niri.nix
 
     ./modules/sunshine.nix
