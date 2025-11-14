@@ -1,10 +1,5 @@
 { pkgs, ... }: {
-  imports = [
-    ./modules/dev.nix
-    ./modules/git.nix
-    ./modules/keybindings.nix
-    ./modules/lsd.nix
-  ];
+  imports = [ ./dev.nix ./git.nix ./keybindings.nix ./lsd.nix ];
 
   # Packages
   environment.systemPackages = with pkgs; [

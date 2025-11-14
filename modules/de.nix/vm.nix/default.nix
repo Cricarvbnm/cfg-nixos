@@ -1,5 +1,5 @@
 { config, ... }: {
-  imports = [ ./modules/looking-glass.nix ];
+  imports = [ ./looking-glass.nix ];
 
   # Libvirtd
   programs.virt-manager.enable = true;
