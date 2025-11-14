@@ -1,19 +1,19 @@
 { pkgs, ... }: {
   imports = [
-    ./modules/snapper.nix
-    ./modules/boot.nix
-    ./modules/docker.nix
-    ./modules/i18n.nix
-    ./modules/networking.nix
-    ./modules/nix.nix
-    ./modules/nixpkgs.nix
-    ./modules/samba.nix
-    ./modules/ssh.nix
-    ./modules/time.nix
-    ./modules/users.nix
-    ./modules/cachix.nix
+    ./snapper.nix
+    ./boot.nix
+    ./docker.nix
+    ./i18n.nix
+    ./networking.nix
+    ./nix.nix
+    ./nixpkgs.nix
+    ./samba.nix
+    ./ssh.nix
+    ./time.nix
+    ./users.nix
+    ./cachix.nix
 
-    # ./modules/vfio.nix
+    # ./vfio.nix
   ];
 
   system.autoUpgrade = {
