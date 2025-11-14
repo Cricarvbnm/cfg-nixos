@@ -1,21 +1,3 @@
-[submodule "modules/hm.nix/modules/de.nix/modules/notification.nix/swaync"]
-	path = modules/hm.nix/modules/de.nix/modules/notification.nix/swaync
-	url = git@github.com:Cricarvbnm/cfg-swaync
-[submodule "modules/hm.nix/modules/de.nix/modules/terminal.nix/kitty"]
-	path = modules/hm.nix/modules/de.nix/modules/terminal.nix/kitty
-	url = git@github.com:Cricarvbnm/cfg-kitty
-[submodule "modules/hm.nix/modules/de.nix/modules/bar.nix/waybar"]
-	path = modules/hm.nix/modules/de.nix/modules/bar.nix/waybar
-	url = git@github.com:Cricarvbnm/cfg-waybar.git
-[submodule "modules/hm.nix/modules/de.nix/modules/hypr.nix"]
-	path = modules/hm.nix/modules/de.nix/modules/hypr.nix
-	url = git@github.com:Cricarvbnm/cfg-hyprland.git
-[submodule "modules/hm.nix/modules/shell.nix/modules/nvim.nix/nvim"]
-	path = modules/hm.nix/modules/shell.nix/modules/nvim.nix/nvim
-	url = git@github.com:Cricarvbnm/cfg-AstroNvim.git
-[submodule "modules/hm.nix/modules/de.nix/modules/video.nix/mpv"]
-	path = modules/hm.nix/modules/de.nix/modules/video.nix/mpv
-	url = git@github.com:Cricarvbnm/cfg-mpv.git
-[submodule "modules/hm.nix/modules/de.nix/modules/niri.nix/niri"]
-	path = modules/hm.nix/modules/de.nix/modules/niri.nix/niri
-	url = git@github.com:Cricarvbnm/cfg-niri.git
+[submodule "modules/hm.nix/modules/de.nix/terminal.nix/kitty"]
+	path = modules/hm.nix/modules/de.nix/terminal.nix/kitty
+	url = git@github.com:Cricarvbnm/cfg-kitty.git
