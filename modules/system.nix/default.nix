@@ -13,7 +13,7 @@
     ./modules/users.nix
     ./modules/cachix.nix
 
-    # ./modules/vfio.nix
+    ./modules/vfio.nix
   ];
 
   system.autoUpgrade = {

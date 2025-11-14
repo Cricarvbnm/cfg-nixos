@@ -1,17 +1,17 @@
 { pkgs, config, lib, ... }: {
   imports = [
-    ./modules/display-manager.nix
-    # ./modules/hyprland.nix
-    ./modules/niri.nix
+    ./display-manager.nix
+    # ./hyprland.nix
+    ./niri.nix
 
-    ./modules/sunshine.nix
-    ./modules/waydroid.nix
-    ./modules/vm.nix
-    ./modules/file-manager.nix
-    ./modules/flatpak.nix
-    ./modules/fonts.nix
-    ./modules/games.nix
-    ./modules/im.nix
+    ./sunshine.nix
+    ./waydroid.nix
+    ./vm.nix
+    ./file-manager.nix
+    ./flatpak.nix
+    ./fonts.nix
+    ./games.nix
+    ./im.nix
   ];
 
   environment.systemPackages = with pkgs; [ wl-clipboard wireshark ];
