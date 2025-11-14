@@ -1,3 +1,21 @@
 [submodule "modules/hm.nix/modules/de.nix/terminal.nix/kitty"]
 	path = modules/hm.nix/modules/de.nix/terminal.nix/kitty
-	url = git@github.com:Cricarvbnm/cfg-kitty.git
+	url = ./modules/hm.nix/modules/de.nix/terminal.nix/kitty
+[submodule "modules/hm.nix/modules/de.nix/hypr.nix"]
+	path = modules/hm.nix/modules/de.nix/hypr.nix
+	url = ./modules/hm.nix/modules/de.nix/hypr.nix
+[submodule "modules/hm.nix/modules/de.nix/bar.nix/waybar"]
+	path = modules/hm.nix/modules/de.nix/bar.nix/waybar
+	url = ./modules/hm.nix/modules/de.nix/bar.nix/waybar
+[submodule "modules/hm.nix/modules/de.nix/niri.nix/niri"]
+	path = modules/hm.nix/modules/de.nix/niri.nix/niri
+	url = ./modules/hm.nix/modules/de.nix/niri.nix/niri
+[submodule "modules/hm.nix/modules/de.nix/video.nix/mpv"]
+	path = modules/hm.nix/modules/de.nix/video.nix/mpv
+	url = git@github.com:Cricarvbnm/cfg-mpv.git
+[submodule "modules/hm.nix/modules/de.nix/notification.nix/swaync"]
+	path = modules/hm.nix/modules/de.nix/notification.nix/swaync
+	url = git@github.com:Cricarvbnm/cfg-swaync.git
+[submodule "modules/hm.nix/modules/shell.nix/nvim.nix/nvim"]
+	path = modules/hm.nix/modules/shell.nix/nvim.nix/nvim
+	url = git@github.com:Cricarvbnm/cfg-AstroNvim.git
