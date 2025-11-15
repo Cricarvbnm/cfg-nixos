@@ -19,3 +19,6 @@
 [submodule "modules/hm.nix/modules/shell.nix/nvim.nix/nvim"]
 	path = modules/hm.nix/modules/shell.nix/nvim.nix/nvim
 	url = git@github.com:Cricarvbnm/cfg-AstroNvim.git
+[submodule "modules/hm.nix/modules/de.nix/menu.nix/fuzzel"]
+	path = modules/hm.nix/modules/de.nix/menu.nix/fuzzel
+	url = git@github.com:catppuccin/fuzzel.git
