@@ -1,15 +1,15 @@
 [submodule "modules/hm.nix/modules/de.nix/terminal.nix/kitty"]
 	path = modules/hm.nix/modules/de.nix/terminal.nix/kitty
-	url = ./modules/hm.nix/modules/de.nix/terminal.nix/kitty
+	url = git@github.com:Cricarvbnm/cfg-kitty.nix
 [submodule "modules/hm.nix/modules/de.nix/hypr.nix"]
 	path = modules/hm.nix/modules/de.nix/hypr.nix
-	url = ./modules/hm.nix/modules/de.nix/hypr.nix
+	url = git@github.com:Cricarvbnm/cfg-hyprland.git
 [submodule "modules/hm.nix/modules/de.nix/bar.nix/waybar"]
 	path = modules/hm.nix/modules/de.nix/bar.nix/waybar
-	url = ./modules/hm.nix/modules/de.nix/bar.nix/waybar
+	url = git@github.com:Cricarvbnm/cfg-waybar.git
 [submodule "modules/hm.nix/modules/de.nix/niri.nix/niri"]
 	path = modules/hm.nix/modules/de.nix/niri.nix/niri
-	url = ./modules/hm.nix/modules/de.nix/niri.nix/niri
+	url = git@github.com:Cricarvbnm/cfg-niri.git
 [submodule "modules/hm.nix/modules/de.nix/video.nix/mpv"]
 	path = modules/hm.nix/modules/de.nix/video.nix/mpv
 	url = git@github.com:Cricarvbnm/cfg-mpv.git
