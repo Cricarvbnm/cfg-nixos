@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./dev.nix ./git.nix ./keybindings.nix ./lsd.nix ];
+  imports = [ ./dev.nix ./git.nix ./keybindings.nix ./lsd.nix ./tldr.nix ];
 
   # Packages
   environment.systemPackages = with pkgs; [
@@ -14,7 +14,6 @@
     nix-output-monitor
     file
     ffmpeg-headless
-    tldr
   ];
 
   # Shell
