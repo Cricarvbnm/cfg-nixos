@@ -21,7 +21,7 @@ in {
   };
 
   # Proxy
-  nixpkgs.config.overlays = [ (self: super: { inherit clash-verge-rev; }) ];
+  nixpkgs.overlays = [ (self: super: { inherit clash-verge-rev; }) ];
   programs.clash-verge = {
     enable = true;
     autoStart = true;
