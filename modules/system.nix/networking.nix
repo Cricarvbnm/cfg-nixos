@@ -1,9 +1,5 @@
-{ pkgs, lib, inputs, ... }:
-let
-  # Latest clash-verge-rev contains many bugs
-  clash-verge-rev = inputs.nixpkgs-stable.clash-verge-rev;
-
-  proxyPort = 7890;
+{ pkgs, lib, ... }:
+let proxyPort = 7890;
 in {
   networking = {
     hostName = "alec-nixos";
@@ -21,7 +17,6 @@ in {
   };
 
   # Proxy
-  nixpkgs.overlays = [ (self: super: { inherit clash-verge-rev; }) ];
   programs.clash-verge = {
     enable = true;
     autoStart = true;
