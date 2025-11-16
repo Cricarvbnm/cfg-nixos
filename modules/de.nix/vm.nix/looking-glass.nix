@@ -12,7 +12,7 @@ in {
 
   # Change owner of /dev/kvmfr0 to allow alec to use
   services.udev.extraRules = ''
-    SUBSYSTEM=="kvmfr", OWNER="alec", GROUP="kvm", MODE="0660"
+    SUBSYSTEM=="kvmfr", GROUP="kvm", MODE="0660"
   '';
 
   # VM will use this devices, including kvmfr
