@@ -47,5 +47,11 @@
 
   users.defaultUserShell = pkgs.zsh;
 
-  environment.shellAliases = { ns = "nixos-rebuild switch"; };
+  environment.shellAliases = {
+    nr = "sudo nixos-rebuild";
+    nors = "nr switch --log-format internal-json -v |& nom --json";
+    nord = "nr dry-build --log-format internal-json -v |& nom --json";
+    norb = "nr boot --log-format internal-json -v |& nom --json";
+    nort = "nr test --log-format internal-json -v |& nom --json";
+  };
 }

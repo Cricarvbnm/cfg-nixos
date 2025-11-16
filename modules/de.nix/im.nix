@@ -8,7 +8,7 @@
         addons = with pkgs; [
           # Methods
           fcitx5-mozc
-          fcitx5-chinese-addons
+          qt6Packages.fcitx5-chinese-addons
 
           # GUI
           fcitx5-gtk

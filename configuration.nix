@@ -1,4 +1,9 @@
-{ ... }: {
+{ config, ... }:
+let
+  inputs = {
+    nixpkgs-stable = import <nixos-stable> { config = config.nixpkgs.config; };
+  };
+in {
   imports = [
     ./hardware-configuration.nix
 
@@ -10,6 +15,8 @@
 
     ./cachix.nix
   ];
+
+  _module.args = { inherit inputs; };
 
   system.stateVersion = "25.05";
 }
