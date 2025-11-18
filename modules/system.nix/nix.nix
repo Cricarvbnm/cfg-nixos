@@ -13,7 +13,7 @@
 
     gc = {
       automatic = true;
-      dates = "weekly";
+      dates = "monthly";
     };
   };
 }
