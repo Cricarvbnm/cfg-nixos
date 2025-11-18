@@ -53,5 +53,7 @@
     nord = "nr dry-build --log-format internal-json -v |& nom --json";
     norb = "nr boot --log-format internal-json -v |& nom --json";
     nort = "nr test --log-format internal-json -v |& nom --json";
+    nd = "nix profile diff-closures --profile /nix/var/nix/profiles/system";
+    npi = "nix path-info -r /nix/var/nix/profiles/system";
   };
 }
