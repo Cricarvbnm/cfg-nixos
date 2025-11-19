@@ -23,7 +23,7 @@
     dates = "00:00";
   };
 
-  services.logind.settings.Login.HandleLidSwitch = "ignore";
+  services.logind.lidSwitch = "ignore";
 
   environment.systemPackages = with pkgs; [ ntfs3g ];
 }
