@@ -7,7 +7,7 @@
       grub.enable = false;
       systemd-boot.enable = true;
 
-      kernelPackages = pkgs.linuxPackages_zen;
     };
+    kernelPackages = pkgs.linuxPackages_zen;
   };
 }
