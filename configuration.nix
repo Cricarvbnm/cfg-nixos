@@ -2,6 +2,8 @@
 let
   inputs = {
     nixpkgs-stable = import <nixos-stable> { config = config.nixpkgs.config; };
+    nixpkgs-unstable =
+      import <nixos-unstable> { config = config.nixpkgs.config; };
   };
 in {
   imports = [
