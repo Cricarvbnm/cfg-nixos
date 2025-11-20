@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./python.nix ];
+  imports = [ ./python.nix ./frontend.nix ./java.nix ];
 
-  environment.systemPackages = with pkgs; [ nodejs maven jdk21 gcc postman ];
+  environment.systemPackages = with pkgs; [ gcc ];
 }
