@@ -1,6 +1,8 @@
 { pkgs, ... }: {
   imports = [ ./dev.nix ./git.nix ./keybindings.nix ./lsd.nix ./tldr.nix ];
 
+  environment.systemPackages = with pkgs; [ pciutils ];
+
   # Shell
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
