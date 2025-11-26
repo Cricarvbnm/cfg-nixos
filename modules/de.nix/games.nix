@@ -2,6 +2,7 @@
   programs = {
     steam = {
       enable = true;
+      package = pkgs.steam.override { privateTmp = false; };
       gamescopeSession.enable = true;
     };
 
