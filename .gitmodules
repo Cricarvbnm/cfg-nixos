@@ -22,6 +22,3 @@
 [submodule "modules/hm.nix/modules/de.nix/menu.nix/fuzzel"]
 	path = modules/hm.nix/modules/de.nix/menu.nix/fuzzel
 	url = git@github.com:catppuccin/fuzzel.git
-[submodule "modules/system.nix/boot.nix/rEFInd-tokyo-night"]
-	path = modules/system.nix/boot.nix/rEFInd-tokyo-night
-	url = git@github.com:almighty-loaf/rEFInd-tokyo-night.git
