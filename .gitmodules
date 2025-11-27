@@ -1,3 +1,4 @@
 [submodule "modules/hm.nix"]
 	path = modules/hm.nix
 	url = git@github.com:Cricarvbnm/cfg-home-manager.git
+	branch = nixos/25.05
