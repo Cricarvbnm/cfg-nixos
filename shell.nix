@@ -27,6 +27,8 @@
         set -gx SHELL "${config.programs.fish.package}/bin/fish"
       '';
     };
+
+    zoxide.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
