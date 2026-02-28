@@ -23,11 +23,9 @@
   services.udev.extraHwdb = ''
     # Embedded keyboard mapping
     evdev:atkbd:dmi:*
-      KEYBOARD_KEY_b8=rightmeta # right alt
       KEYBOARD_KEY_3a=leftctrl # capslock
       KEYBOARD_KEY_01=capslock # esc
-      KEYBOARD_KEY_1d=leftalt # left ctrl
-      KEYBOARD_KEY_38=esc # left alt
+      KEYBOARD_KEY_1d=esc # left ctrl
   '';
 
   i18n = {
