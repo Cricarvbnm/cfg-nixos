@@ -21,6 +21,7 @@
 
     opts = {
       number = true;
+      relativenumber = true;
 
       # Search
       incsearch = true;
