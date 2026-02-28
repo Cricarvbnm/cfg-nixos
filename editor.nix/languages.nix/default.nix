@@ -10,7 +10,7 @@
       inlayHints.enable = true;
       keymaps = [
         {
-          key = "<Leader>lf";
+          key = "<Leader>cf";
           lspBufAction = "format";
         }
       ];

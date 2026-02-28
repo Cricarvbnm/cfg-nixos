@@ -66,13 +66,13 @@
       }
       {
         options.desc = "Buffer Delete";
-        key = "<Leader>c";
+        key = "<Leader>bc";
         action = "<Cmd>bdelete<CR>";
         mode = [ "n" ];
       }
       {
         options.desc = "Buffer Save";
-        key = "<Leader>w";
+        key = "<C-s>";
         action = "<Cmd>w<CR>";
         mode = [ "n" ];
       }
