@@ -47,7 +47,7 @@
       {
         options.desc = "Save and Quit";
         key = "<Leader>Q";
-        action = "<Cmd>wq<CR>";
+        action = "<Cmd>q!<CR>";
         mode = [ "n" ];
       }
 
@@ -66,7 +66,7 @@
       }
       {
         options.desc = "Buffer Delete";
-        key = "<Leader>bc";
+        key = "<Leader>bd";
         action = "<Cmd>bdelete<CR>";
         mode = [ "n" ];
       }
