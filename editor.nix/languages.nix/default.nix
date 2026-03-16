@@ -3,6 +3,7 @@
   imports = [
     ./nix.nix
     ./tex.nix
+    ./markdown.nix
   ];
 
   programs.nixvim = {
