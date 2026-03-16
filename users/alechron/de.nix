@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  imports = [ ./kde.nix ];
+  imports = [
+    ./kde.nix
+    ./dev.nix
+  ];
 
   home.packages =
     (with pkgs.kdePackages; [
