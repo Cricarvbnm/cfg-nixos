@@ -104,7 +104,10 @@
   users.groups.networkmanager.members = [ "alechron" ];
 
   # Programs
-  environment.systemPackages = with pkgs; [ curl ];
+  environment.systemPackages = with pkgs; [
+    curl
+    iftop
+  ];
   programs = {
     git = {
       enable = true;
