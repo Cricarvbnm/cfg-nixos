@@ -1,5 +1,9 @@
-{ ... }: {
-  imports = [ ./nvim-tree.nix ];
+{ ... }:
+{
+  imports = [
+    ./nvim-tree.nix
+    ./coding.nix
+  ];
 
   programs.nixvim.plugins = {
     lualine.enable = true;
