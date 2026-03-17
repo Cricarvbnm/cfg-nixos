@@ -5,6 +5,7 @@
     ./tex.nix
     ./markdown.nix
     ./python.nix
+    ./java.nix
   ];
 
   programs.nixvim = {
