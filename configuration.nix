@@ -111,6 +111,7 @@
 
   # Programs
   environment.systemPackages = with pkgs; [
+    tree
     curl
     iftop
   ];
