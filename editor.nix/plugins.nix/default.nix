@@ -1,15 +1,16 @@
 { ... }:
 {
-  imports = [
-    ./nvim-tree.nix
-    ./coding.nix
-  ];
+  programs.nixvim = {
+    imports = [
+      ./nvim-tree.nix
+      ./coding.nix
+      ./editor.nix
+    ];
 
-  programs.nixvim.plugins = {
-    lualine.enable = true;
+    plugins = {
+      lualine.enable = true;
 
-    which-key.enable = true;
-
-    bufferline.enable = true;
+      bufferline.enable = true;
+    };
   };
 }

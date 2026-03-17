@@ -1,6 +1,6 @@
 { ... }:
 {
-  programs.nixvim.plugins = {
+  plugins = {
     mini-pairs.enable = true;
     ts-comments.enable = true;
   };
