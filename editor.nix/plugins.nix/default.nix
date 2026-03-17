@@ -5,6 +5,7 @@
       ./nvim-tree.nix
       ./coding.nix
       ./editor.nix
+      ./treesitter.nix
     ];
 
     plugins = {
