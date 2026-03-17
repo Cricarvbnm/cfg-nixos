@@ -30,7 +30,6 @@ in
         view_method = "mupdf";
       };
     };
-    cmp-vimtex.enable = true;
   };
 
   environment.systemPackages = [

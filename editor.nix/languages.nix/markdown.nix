@@ -5,7 +5,7 @@
       marksman.enable = true;
     };
     plugins = {
-      none-ls.sources.formatting.prettier.enable = true;
+      conform-nvim.settings.formatters_by_ft.markdown = [ "prettier" ];
       render-markdown.enable = true;
     };
   };

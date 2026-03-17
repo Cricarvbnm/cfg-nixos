@@ -3,7 +3,7 @@
   programs.nixvim = {
     lsp.servers.nil_ls.enable = true;
 
-    plugins.none-ls.sources.formatting.nixfmt.enable = true;
+    plugins.conform-nvim.settings.formatters_by_ft.nix = [ "nixfmt" ];
 
     extraFiles."after/ftplugin/nix.lua".text = ''
       vim.opt_local.tabstop = 2

@@ -2,6 +2,6 @@
 {
   programs.nixvim = {
     lsp.servers.jdtls.enable = true;
-    plugins.none-ls.sources.formatting.google_java_format.enable = true;
+    plugins.conform-nvim.settings.formatters_by_ft.java = [ "google-java-format" ];
   };
 }

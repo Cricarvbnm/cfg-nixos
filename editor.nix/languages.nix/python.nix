@@ -1,14 +1,12 @@
-{ ... }:
+{ config, ... }:
 {
   programs.nixvim = {
-    lsp.servers = {
-      pyright.enable = true;
-      ruff.enable = true;
-    };
+    lsp.servers.ruff.enable = true;
 
     plugins = {
-      dap.enable = true;
-      dap-python.enable = true;
+      conform-nvim.settings.formatters_by_ft.python = [ "black" ];
+
+      dap-python.enable = config.programs.nixvim.plugins.dap.enable;
     };
   };
 }

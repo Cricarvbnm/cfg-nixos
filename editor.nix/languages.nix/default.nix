@@ -11,12 +11,6 @@
   programs.nixvim = {
     lsp = {
       inlayHints.enable = true;
-      keymaps = [
-        {
-          key = "<Leader>cf";
-          lspBufAction = "format";
-        }
-      ];
       servers = {
         lua_ls.enable = true;
       };
@@ -25,54 +19,49 @@
     plugins = {
       lsp.enable = true;
 
-      none-ls = {
+      dap.enable = true;
+
+      conform-nvim = {
         enable = true;
-        luaConfig.pre = "local augroup = vim.api.nvim_create_augroup('LspFormatting', {})";
-        settings = {
-          on_attach = ''
-            function(client, bufnr)
-              if client.supports_method("textDocument/formatting") then
-                  vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-                  vim.api.nvim_create_autocmd("BufWritePre", {
-                group = augroup,
-                buffer = bufnr,
-                callback = function()
-                    vim.lsp.buf.format({ async = false })
-                end,
-                  })
-              end
-            end
-          '';
+        autoInstall.enable = true;
+        settings.format_on_save = {
+          timeout_ms = 500;
+          lsp_format = "fallback";
         };
       };
 
-      cmp = {
+      blink-cmp = {
         enable = true;
         settings = {
-          sources = [
-            { name = "nvim_lsp"; }
-            { name = "async_path"; }
-            { name = "nvim_lsp_signature_help"; }
-          ];
-          mapping = {
-            __raw = ''
-                cmp.mapping.preset.insert({
-                  ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-                  ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                  ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-                  ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-                  ["<C-'>"] = cmp.mapping.complete(),
-                  ["<C-CR>"] = LazyVim.cmp.confirm({ select = true }),
-                  ["<S-CR>"] = LazyVim.cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-                  ["<CR>"] = function(fallback)
-                    cmp.abort()
-                    fallback()
-                end,
-              })
-            '';
+          sources = {
+            default = [
+              "lsp"
+              "path"
+              "snippets"
+              "buffer"
+            ];
+          };
+          snippets = {
+            preset = "default";
+          };
+          keymap = {
+            preset = "super-tab";
+            "<c-'>" = [
+              "show"
+              "show_documentation"
+              "hide_documentation"
+            ];
           };
         };
       };
     };
+
+    keymaps = [
+      {
+        options.desc = "Format";
+        key = "<Leader>cf";
+        action = "<cmd>lua require('conform').format()<cr>";
+      }
+    ];
   };
 }
