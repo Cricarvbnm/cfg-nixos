@@ -6,12 +6,7 @@
       ./coding.nix
       ./editor.nix
       ./treesitter.nix
+      ./ui.nix
     ];
-
-    plugins = {
-      lualine.enable = true;
-
-      bufferline.enable = true;
-    };
   };
 }
