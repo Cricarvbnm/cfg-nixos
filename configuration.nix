@@ -103,6 +103,12 @@
   };
   users.groups.networkmanager.members = [ "alechron" ];
 
+  # SSH
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
+  };
+
   # Programs
   environment.systemPackages = with pkgs; [
     curl
