@@ -54,6 +54,7 @@
           };
         };
       };
+      blink-cmp-copilot.enable = true;
     };
 
     keymaps = [
