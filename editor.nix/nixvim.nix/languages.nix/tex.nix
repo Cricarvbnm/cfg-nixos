@@ -1,9 +1,9 @@
-{ config, ... }:
+{ texlive, ... }:
 {
-  programs.nixvim.plugins = {
+  plugins = {
     vimtex = {
       enable = true;
-      texlivePackage = config._module.args.texlive;
+      texlivePackage = texlive;
       settings = {
         compiler_method = "latexmk";
         compiler_latexmk = {
@@ -23,8 +23,4 @@
       };
     };
   };
-
-  environment.systemPackages = [
-    config.programs.nixvim.plugins.vimtex.mupdfPackage
-  ];
 }

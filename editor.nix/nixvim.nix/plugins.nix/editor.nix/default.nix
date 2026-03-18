@@ -1,4 +1,3 @@
-{ ... }:
 {
   imports = [
     ./todo-comments.nix
