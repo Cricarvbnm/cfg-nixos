@@ -1,17 +1,9 @@
-{ pkgs, config, ... }:
-let
-  tex = pkgs.texliveSmall.withPackages (
-    ps: with ps; [
-      collection-langchinese
-      latexmk
-    ]
-  );
-in
+{ config, ... }:
 {
   programs.nixvim.plugins = {
     vimtex = {
       enable = true;
-      texlivePackage = tex;
+      texlivePackage = config._module.args.texlive;
       settings = {
         compiler_method = "latexmk";
         compiler_latexmk = {
@@ -33,7 +25,6 @@ in
   };
 
   environment.systemPackages = [
-    tex
     config.programs.nixvim.plugins.vimtex.mupdfPackage
   ];
 }
