@@ -10,7 +10,6 @@
       options.desc = "Toggle Explorer";
       key = "<Leader>e";
       action = "<Cmd>NvimTreeToggle<CR>";
-      mode = [ "n" ];
     }
   ];
 }

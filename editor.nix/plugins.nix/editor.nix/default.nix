@@ -7,5 +7,7 @@
     ./which-key.nix
     ./gitsigns.nix
     ./trouble.nix
+    ./lazygit.nix
+    ./nvim-tree.nix
   ];
 }
