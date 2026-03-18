@@ -10,11 +10,17 @@
         {
           mode = { "n", "x" },
           { "<leader>c", group = "code" },
+
           { "<leader>s", group = "search" },
+          {"<leader>sn", group = "noice"},
+
           { "<leader>g", group = "git" },
+
           { "[", group = "prev" },
           { "]", group = "next" },
+
           { "<leader>x", group = "diagnostics/quickfix" },
+
           {
             "<leader>b",
             group = "buffer",
