@@ -7,6 +7,7 @@
     ./de.nix
     ./nix.nix
     ./proxy.nix
+    ./dev.nix
   ];
 
   system.stateVersion = "25.11";
