@@ -4,4 +4,8 @@
     jetbrains.idea
     jetbrains.jdk
   ];
+
+  programs.opencode = {
+    enable = true;
+  };
 }
