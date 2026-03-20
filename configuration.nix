@@ -105,9 +105,20 @@
   users.groups.networkmanager.members = [ "alechron" ];
 
   # SSH
-  services.openssh = {
-    enable = true;
-    openFirewall = true;
+  services = {
+    openssh = {
+      enable = true;
+      openFirewall = true;
+    };
+
+    avahi = {
+      enable = true;
+      publish = {
+        enable = true;
+        addresses = true;
+        workstation = true;
+      };
+    };
   };
 
   # Programs
