@@ -116,7 +116,6 @@
       publish = {
         enable = true;
         addresses = true;
-        workstation = true;
       };
       extraServiceFiles = {
         ssh = "${pkgs.avahi}/etc/avahi/services/ssh.service";
