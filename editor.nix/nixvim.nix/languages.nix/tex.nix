@@ -1,9 +1,7 @@
-{ texlive, ... }:
 {
   plugins = {
     vimtex = {
       enable = true;
-      texlivePackage = texlive;
       settings = {
         compiler_method = "latexmk";
         compiler_latexmk = {

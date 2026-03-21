@@ -40,7 +40,7 @@
 
       perSystem =
         {
-          system,
+          inputs',
           pkgs,
           self,
           ...
@@ -55,13 +55,12 @@
         in
         {
           packages = {
-            nvim = nixvim.legacyPackages.${system}.makeNixvimWithModule {
-              inherit pkgs;
-              module = import ./editor.nix/nixvim.nix;
-              extraSpecialArgs = {
-                inherit texlive;
-              };
-            };
+            nvim =
+              (inputs'.nixvim.legacyPackages.makeNixvimWithModule {
+                inherit pkgs;
+                module = import ./editor.nix/nixvim.nix;
+              }).extend
+                { plugins.vimtex.texlivePackage = texlive; };
             inherit texlive;
           };
         };
