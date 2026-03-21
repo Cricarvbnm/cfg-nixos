@@ -42,26 +42,23 @@
         {
           inputs',
           pkgs,
-          self,
+          self',
           ...
         }:
-        let
-          texlive = pkgs.texliveSmall.withPackages (
-            ps: with ps; [
-              collection-langchinese
-              latexmk
-            ]
-          );
-        in
         {
           packages = {
+            texlive = pkgs.texliveSmall.withPackages (
+              ps: with ps; [
+                collection-langchinese
+                latexmk
+              ]
+            );
             nvim =
               (inputs'.nixvim.legacyPackages.makeNixvimWithModule {
                 inherit pkgs;
                 module = import ./editor.nix/nixvim.nix;
               }).extend
-                { plugins.vimtex.texlivePackage = texlive; };
-            inherit texlive;
+                { plugins.vimtex.texlivePackage = self'.packages.texlive; };
           };
         };
 
