@@ -104,13 +104,14 @@
   };
   users.groups.networkmanager.members = [ "alechron" ];
 
-  # SSH
   services = {
+    # SSH
     openssh = {
       enable = true;
       openFirewall = true;
     };
 
+    # mDNS
     avahi = {
       enable = true;
       nssmdns4 = true;
