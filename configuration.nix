@@ -128,6 +128,7 @@
     tree
     curl
     iftop
+    bitwarden-desktop
   ];
   programs = {
     git = {
