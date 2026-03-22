@@ -5,6 +5,7 @@
     ./markdown.nix
     ./python.nix
     ./java.nix
+    ./json.nix
   ];
 
   lsp = {
