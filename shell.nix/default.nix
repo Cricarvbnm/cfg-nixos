@@ -1,5 +1,9 @@
 { pkgs, config, ... }:
 {
+  imports = [
+    ./utils.nix
+  ];
+
   programs = {
     bash = {
       interactiveShellInit = ''
