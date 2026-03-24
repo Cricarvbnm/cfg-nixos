@@ -37,7 +37,7 @@
       mode = [ "n" ];
     }
     {
-      options.desc = "Save and Quit";
+      options.desc = "Force Quit";
       key = "<Leader>Q";
       action = "<Cmd>q!<CR>";
       mode = [ "n" ];
