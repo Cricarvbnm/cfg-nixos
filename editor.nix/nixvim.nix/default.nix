@@ -65,7 +65,10 @@
       options.desc = "Buffer Save";
       key = "<C-s>";
       action = "<Cmd>w<CR>";
-      mode = [ "n" ];
+      mode = [
+        "n"
+        "i"
+      ];
     }
   ];
 }
