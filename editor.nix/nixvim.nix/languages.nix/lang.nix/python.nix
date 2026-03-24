@@ -1,10 +1,17 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 {
   lsp.servers.ruff.enable = true;
 
   plugins.lint = {
     lintersByFt.python = [ "pylint" ];
-    linters.pylint = { cmd = lib.getExe pkgs.pylint; };
+    linters.pylint = {
+      cmd = lib.getExe pkgs.pylint;
+    };
   };
 
   plugins = {

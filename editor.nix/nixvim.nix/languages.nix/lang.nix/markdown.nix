@@ -4,7 +4,9 @@
 
   plugins.lint = {
     lintersByFt.markdown = [ "vale" ];
-    linters.vale = { cmd = lib.getExe pkgs.vale; };
+    linters.vale = {
+      cmd = lib.getExe pkgs.vale;
+    };
   };
 
   plugins = {

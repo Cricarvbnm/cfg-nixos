@@ -10,7 +10,10 @@
           end
         '';
       };
-      event = [ "BufEnter" "BufWritePost" ];
+      event = [
+        "BufEnter"
+        "BufWritePost"
+      ];
     };
   };
 }
