@@ -1,6 +1,7 @@
 {
   imports = [
     ./nix.nix
+    ./lua.nix
     ./tex.nix
     ./markdown.nix
     ./python.nix

@@ -2,7 +2,7 @@
   lsp = {
     inlayHints.enable = true;
     servers = {
-      lua_ls.enable = true;
+      # lua_ls is now configured in lang.nix/lua.nix
     };
   };
   plugins.lsp.enable = true;
