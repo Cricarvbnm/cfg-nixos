@@ -3,10 +3,17 @@
   lsp.servers.nil_ls.enable = true;
 
   plugins.lint = {
-    lintersByFt.nix = [ "deadnix" "statix" ];
+    lintersByFt.nix = [
+      "deadnix"
+      "statix"
+    ];
     linters = {
-      deadnix = { cmd = lib.getExe pkgs.deadnix; };
-      statix = { cmd = lib.getExe pkgs.statix; };
+      deadnix = {
+        cmd = lib.getExe pkgs.deadnix;
+      };
+      statix = {
+        cmd = lib.getExe pkgs.statix;
+      };
     };
   };
 
@@ -18,3 +25,4 @@
     vim.opt_local.expandtab = true
   '';
 }
+
