@@ -28,11 +28,9 @@
 
   outputs =
     inputs@{
-      self,
       nixpkgs,
       flake-parts,
       home-manager,
-      nixvim,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
