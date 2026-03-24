@@ -4,6 +4,6 @@
 
   plugins.lint = {
     lintersByFt.lua = [ "luacheck" ];
-    linters.luacheck = { cmd = lib.getExe pkgs.luacheck; };
+    linters.luacheck = { cmd = lib.getExe pkgs.luaPackages.luacheck; };
   };
 }
