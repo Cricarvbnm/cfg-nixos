@@ -90,6 +90,11 @@
     pulse.enable = true;
   };
 
+  services.scx = {
+    enable = true;
+    # scheduler = "scx_bpfland";
+  };
+
   security.sudo.wheelNeedsPassword = false;
 
   users.users.alechron = {
