@@ -1,101 +1,64 @@
 # AGENTS.md - NixOS Configuration Repository
 
-This is a NixOS flake-based system configuration using `nixos-25.11` channel.
+NixOS flake-based system configuration using `nixos-25.11` channel with home-manager, nixvim, and KDE Plasma.
 
-## Build/Test Commands
+## Build Commands
 
-### Building the System
 ```bash
-# Build the system configuration (dry-run)
+# Dry build - check for errors without applying
 sudo nixos-rebuild dry-build --flake .#alec-nixos
 
-# Build and switch to new configuration
-sudo nixos-rebuild switch --flake .#alec-nixos
-
-# Build without switching (for testing)
-sudo nixos-rebuild build --flake .#alec-nixos
-```
-
-### Testing Changes
-```bash
-# Test configuration without applying
+# Test configuration (boots in VM if available)
 sudo nixos-rebuild test --flake .#alec-nixos
 
-# Dry build to check for errors
-sudo nixos-rebuild dry-build --flake .#alec-nixos
+# Build configuration
+sudo nixos-rebuild build --flake .#alec-nixos
+
+# Apply configuration (switch to new config)
+sudo nixos-rebuild switch --flake .#alec-nixos
 ```
 
-### Nix Evaluation
+## Nix Validation
+
 ```bash
-# Check Nix syntax and evaluate configuration
+# Evaluate configuration
 nix eval .#nixosConfigurations.alec-nixos.pkgs.system
 
-# Check for missing imports or syntax errors
+# Check syntax
 nix-instantiate --parse configuration.nix
+
+# Format nix files
+nixfmt .
+
+# Update flake inputs
+sudo nix flake update
 ```
 
-### NixOS Options
-```bash
-# Search for options
-nix options nixos.some.option.path
-
-# Check current option values
-nixos-option <option-path>
-```
-
-## Code Style Guidelines
+## Code Style
 
 ### File Organization
-- One module per file (e.g., `shell.nix`, `nix.nix`, `de.nix`)
-- Import system modules via `./module.nix` in `configuration.nix`
-- User home-manager config in `users/<username>/home.nix`
+- One module per file, imported in parent `default.nix`
+- System modules in root: `shell.nix`, `nix.nix`, `de.nix`, `proxy.nix`, `dev.nix`, `editor.nix`
+- User config in `users/<username>/`
+- Nixvim: `editor.nix/nixvim.nix/` with subdirs for `languages/`, `plugins/`, `ui.nix`
 
 ### Nix Syntax
-- Use 2 spaces for indentation
-- Always quote strings that could be interpreted as paths: `./file.nix`
-- Use `with pkgs;` for package lists in systemPackages
-- Prefer attribute sets over lists where appropriate
-- Use `lib.mkEnableOption` / `lib.mkOption` for reusable options
+- 2 spaces indentation
+- Quote paths: `./module.nix` not `./module.nix`
+- Use `with pkgs;` for package lists
+- Prefer attr sets over lists
 
-### Naming Conventions
-- File names: kebab-case (e.g., `shell.nix`, `proxy.nix`)
-- Nix attributes: camelCase (e.g., `enable`, `extraSpecialArgs`)
+### Naming
+- Files: kebab-case (`shell.nix`, `proxy.nix`)
+- Attrs: camelCase (`enable`, `extraSpecialArgs`)
 - Options: `enable`, `package`, `settings` suffixes
-- Variables: camelCase or snake_case (prefer camelCase for attrs)
 
-### Imports
+### Module Pattern
 ```nix
 { pkgs, lib, config, ... }:
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./editor.nix
-  ];
-}
-```
+  imports = [ ./hardware-configuration.nix ];
 
-### Package Declarations
-```nix
-# System packages
-environment.systemPackages = with pkgs; [
-  curl
-  git
-];
-
-# Single package
-programs.fish.enable = true;
-```
-
-### Option Types
-- Booleans: `enable = true;`
-- Strings: `defaultLocale = "en_GB.UTF-8";`
-- Lists: `extraLocales = [ "zh_CN.UTF-8/UTF-8" ];`
-- Attr sets: `settings = { inputMethod = { ... }; };`
-
-### Modules Structure
-```nix
-{ pkgs, lib, config, ... }:
-{
   options = {
     myOption = lib.mkOption {
       type = lib.types.bool;
@@ -110,83 +73,84 @@ programs.fish.enable = true;
 }
 ```
 
-### Error Handling
-- Use `lib.mkIf` for conditional configuration
-- Use `lib.mkMerge` for merging lists/attrs across modules
-- Use `lib.asserts` for validation when needed
+### Package Declarations
+```nix
+# System packages
+environment.systemPackages = with pkgs; [ curl git ];
 
-### Flake Inputs
-- Pinned to specific versions in `flake.nix`
-- Follows `nixos-25.11` release channel
-- Use `inputs.nixpkgs.follows = "nixpkgs"` for input synchronization
+# Conditional packages
+environment.systemPackages = with pkgs; [
+  curl
+] ++ lib.optionals config.someFeature [ extra-package ];
+```
+
+### Option Types
+- Booleans: `enable = true;`
+- Strings: `defaultLocale = "en_GB.UTF-8";`
+- Lists: `extraLocales = [ "zh_CN.UTF-8/UTF-8" ];`
+- Attr sets: `settings = { inputMethod = { ... }; };`
+
+### Error Handling
+- `lib.mkIf` - conditional config
+- `lib.mkMerge` - merge lists/attrs across modules
+- `lib.asserts` - validation
+
+### Flake Structure
+```nix
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    nixvim.url = "github:nix-community/nixvim/nixos-25.11";
+  };
+
+  outputs = inputs@{ nixpkgs, flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      # perSystem and flake definitions
+    };
+}
+```
 
 ### Home Manager
 - State version: `home.stateVersion = "25.11";`
-- User configs in `users/<username>/home.nix`
-- Imports user-specific modules (e.g., `de.nix`)
-
-### Common Patterns
-
-```nix
-# Package with config
-programs = {
-  git = {
-    enable = true;
-    config = {
-      init.defaultBranch = "main";
-      user = {
-        name = "username";
-        email = "user@example.com";
-      };
-    };
-  };
-};
-
-# List with conditional items
-fonts.packages = with pkgs; [
-  noto-fonts
-] ++ lib.optionals config.someFeature [ extra-package ];
-
-# Conditional config
-lib.mkIf config.services.something.enable {
-  # config
-};
-```
-
-## Useful Commands
-
-```bash
-# Update flake inputs
-sudo nix flake update
-
-# Enter dev shell (if defined)
-nix develop
-
-# Format nix files
-nixfmt .
-
-# Clean up old generations
-sudo nix-collect-garbage -d
-sudo nix-env --delete-generations +10
-```
+- User config in `users/<username>/home.nix`
 
 ## Architecture
 
 ```
 /etc/nixos/
-├── flake.nix              # Flake entry point
-├── configuration.nix     # Main system config
-├── hardware-configuration.nix
-├── shell.nix             # Shell configuration
-├── nix.nix               # Nix settings
-├── de.nix                # Desktop environment
-├── proxy.nix             # Proxy settings
-├── editor.nix            # Editor config
-├── winboat.nix           # Winboat config
+├── flake.nix                  # Flake entry point
+├── configuration.nix          # Main NixOS config
+├── hardware-configuration.nix # Hardware-specific
+├── shell.nix                  # Shell (fish)
+├── nix.nix                    # Nix settings
+├── de.nix                     # Desktop environment
+├── proxy.nix                  # Proxy settings
+├── dev.nix                    # Dev environment
+├── editor.nix/                # Editor (nixvim)
+│   └── nixvim.nix/
+│       ├── default.nix        # Main nixvim module
+│       ├── plugins.nix/       # Plugins config
+│       ├── languages.nix/     # LSP, linters, formatters
+│       │   ├── lsp.nix
+│       │   ├── lint.nix
+│       │   ├── format.nix
+│       │   └── lang.nix/      # Language-specific
+│       └── ui.nix/            # UI (snacks, noice)
 └── users/
     └── alechron/
-        ├── home.nix      # Home manager config
-        ├── de.nix        # User DE config
-        ├── kde.nix       # KDE config
-        └── dev.nix       # Dev environment
+        ├── home.nix           # Home manager
+        ├── de.nix             # User DE config
+        ├── kde.nix            # KDE config
+        └── dev.nix            # User dev tools
+```
+
+## Useful Commands
+
+```bash
+# Clean up
+sudo nix-collect-garbage -d
+
+# Enter dev shell
+nix develop
 ```
