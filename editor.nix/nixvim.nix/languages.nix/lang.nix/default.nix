@@ -7,5 +7,10 @@
     ./python.nix
     ./java.nix
     ./json.nix
+    ./bash.nix
+    ./c.nix
+    ./typescript.nix
+    ./yaml.nix
+    ./toml.nix
   ];
 }
