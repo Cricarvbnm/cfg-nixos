@@ -5,7 +5,7 @@
   plugins.lint = {
     lintersByFt.java = [ "pmd" ];
     linters.pmd = {
-      cmd = lib.getExe pkgs.pmd;
+      cmd = lib.getExe' pkgs.pmd "pmd";
     };
   };
 

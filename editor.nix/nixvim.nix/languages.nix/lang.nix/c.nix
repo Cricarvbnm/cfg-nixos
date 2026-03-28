@@ -8,7 +8,7 @@
       cpp = [ "cppcheck" ];
     };
     linters.cppcheck = {
-      cmd = lib.getExe pkgs.cppcheck;
+      cmd = lib.getExe' pkgs.cppcheck "cppcheck";
     };
   };
 
