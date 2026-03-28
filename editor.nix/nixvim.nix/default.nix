@@ -21,7 +21,7 @@
     smartcase = true;
 
     list = true;
-    listchars = "tab:>,trail:-,nbsp:+";
+    listchars = "tab:<->,trail:-,nbsp:+";
   };
 
   clipboard = {
