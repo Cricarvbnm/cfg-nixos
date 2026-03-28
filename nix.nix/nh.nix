@@ -1,10 +1,5 @@
 { pkgs, config, ... }:
 {
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
-
-  # NH
   environment = {
     sessionVariables = {
       NH_OS_FLAKE = "/etc/nixos#nixosConfigurations.${config.networking.hostName}";
