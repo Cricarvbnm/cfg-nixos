@@ -22,7 +22,7 @@ sudo nixos-rebuild switch --flake .#alec-nixos
 
 ```bash
 # Evaluate configuration
-nix eval .#nixosConfigurations.alec-nixos.pkgs.system
+nix eval .#nixosConfigurations.alec-nixos.pkgs.stdenv.hostPlatform.system
 
 # Check syntax
 nix-instantiate --parse configuration.nix
@@ -37,23 +37,27 @@ sudo nix flake update
 ## Code Style
 
 ### File Organization
+
 - One module per file, imported in parent `default.nix`
 - System modules in root: `shell.nix`, `nix.nix`, `de.nix`, `proxy.nix`, `dev.nix`, `editor.nix`
 - User config in `users/<username>/`
 - Nixvim: `editor.nix/nixvim.nix/` with subdirs for `languages/`, `plugins/`, `ui.nix`
 
 ### Nix Syntax
+
 - 2 spaces indentation
 - Quote paths: `./module.nix` not `./module.nix`
 - Use `with pkgs;` for package lists
 - Prefer attr sets over lists
 
 ### Naming
+
 - Files: kebab-case (`shell.nix`, `proxy.nix`)
 - Attrs: camelCase (`enable`, `extraSpecialArgs`)
 - Options: `enable`, `package`, `settings` suffixes
 
 ### Module Pattern
+
 ```nix
 { pkgs, lib, config, ... }:
 {
@@ -74,6 +78,7 @@ sudo nix flake update
 ```
 
 ### Package Declarations
+
 ```nix
 # System packages
 environment.systemPackages = with pkgs; [ curl git ];
@@ -85,17 +90,20 @@ environment.systemPackages = with pkgs; [
 ```
 
 ### Option Types
+
 - Booleans: `enable = true;`
 - Strings: `defaultLocale = "en_GB.UTF-8";`
 - Lists: `extraLocales = [ "zh_CN.UTF-8/UTF-8" ];`
 - Attr sets: `settings = { inputMethod = { ... }; };`
 
 ### Error Handling
+
 - `lib.mkIf` - conditional config
 - `lib.mkMerge` - merge lists/attrs across modules
 - `lib.asserts` - validation
 
 ### Flake Structure
+
 ```nix
 {
   inputs = {
@@ -112,6 +120,7 @@ environment.systemPackages = with pkgs; [
 ```
 
 ### Home Manager
+
 - State version: `home.stateVersion = "25.11";`
 - User config in `users/<username>/home.nix`
 

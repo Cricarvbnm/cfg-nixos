@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    inputs.self.packages.${pkgs.system}.texlive
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.texlive
 
     # Java
     jetbrains.idea
