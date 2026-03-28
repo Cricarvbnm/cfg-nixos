@@ -5,6 +5,8 @@
     curl
     iftop
     bitwarden-desktop
+
+    unrar
   ];
 
   programs = {

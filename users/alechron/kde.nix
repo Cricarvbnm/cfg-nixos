@@ -1,8 +1,6 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 {
   imports = [ inputs.plasma-manager.homeModules.plasma-manager ];
-
-  home.packages = with pkgs; [ unrar ];
 
   programs = {
     konsole = {
