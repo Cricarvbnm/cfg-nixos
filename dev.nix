@@ -6,5 +6,8 @@
     # Java
     jetbrains.idea
     jetbrains.jdk
+
+    # Python
+    uv
   ];
 }
