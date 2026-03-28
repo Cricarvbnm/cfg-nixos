@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   environment.systemPackages = with pkgs; [
     winboat
@@ -9,5 +9,5 @@
     enable = true;
   };
 
-  users.groups.docker.members = [ "alechron" ];
+  users.groups.docker.members = [ config._module.args.mainUser ];
 }
