@@ -5,10 +5,6 @@
   home.packages = with pkgs; [ unrar ];
 
   programs = {
-    # plasma = {
-    # enable = true;
-    # };
-
     konsole = {
       enable = true;
       defaultProfile = "mine";
