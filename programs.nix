@@ -5,6 +5,7 @@
     curl
     iftop
     bitwarden-desktop
+    tldr
 
     unrar
   ];
