@@ -12,5 +12,6 @@
     ./typescript.nix
     ./yaml.nix
     ./toml.nix
+    ./fish.nix
   ];
 }
