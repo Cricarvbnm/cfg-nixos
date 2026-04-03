@@ -6,10 +6,6 @@
   };
 
   extraFiles = {
-    "after/ftplugin/fish.lua".text = ''
-      vim.opt_local.tabstop = 4
-      vim.opt_local.shiftwidth = 4
-      vim.opt_local.expandtab = true
-    '';
+    "after/ftplugin/fish.lua" = import ./utils.nix/opt-tab.nix { };
   };
 }

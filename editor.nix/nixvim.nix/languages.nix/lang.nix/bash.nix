@@ -1,10 +1,9 @@
 {
   lib,
   pkgs,
-  config,
   ...
 }:
-{
+rec {
   lsp.servers.bashls.enable = true;
 
   plugins.lint = {
@@ -23,12 +22,7 @@
   };
 
   extraFiles = {
-    "after/ftplugin/sh.lua".text = ''
-      vim.opt_local.tabstop = 4
-      vim.opt_local.shiftwidth = 4
-      vim.opt_local.expandtab = true
-    '';
-
-    "after/ftplugin/bash.lua".text = config.extraFiles."after/ftplugin/sh.lua".text;
+    "after/ftplugin/sh.lua" = import ./utils.nix/opt-tab.nix { };
+    "after/ftplugin/bash.lua" = extraFiles."after/ftplugin/sh.lua";
   };
 }
