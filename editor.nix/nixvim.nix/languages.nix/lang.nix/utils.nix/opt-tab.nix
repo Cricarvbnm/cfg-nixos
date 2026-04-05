@@ -13,6 +13,6 @@ in
   text = ''
     vim.opt_local.tabstop = ${tab-width-str}
     vim.opt_local.shiftwidth = ${tab-width-str}
-    vim.opt_local.expandtab = ${builtins.toString expandtab}
+    vim.opt_local.expandtab = ${if expandtab then "true" else "false"}
   '';
 }
