@@ -22,6 +22,8 @@
         KEYBOARD_KEY_1d=esc # LeftCtrl
     '';
 
+    logind.settings.Login.HandleLidSwitch = "ignore";
+
     openssh = {
       enable = true;
       openFirewall = true;
