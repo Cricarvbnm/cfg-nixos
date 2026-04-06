@@ -10,4 +10,6 @@
   };
 
   plugins.conform-nvim.settings.formatters_by_ft.java = [ "google-java-format" ];
+
+  extraFiles."after/ftplugin/java.lua" = import ./utils.nix/opt-tab.nix { tab-width = 2; };
 }
