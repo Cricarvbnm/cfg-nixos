@@ -18,6 +18,7 @@
     relativenumber = true;
 
     incsearch = true;
+    ignorecase = true;
     smartcase = true;
 
     list = true;
