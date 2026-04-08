@@ -71,8 +71,8 @@
                 {
                   nixpkgs.config.packageOverrides = pkgs: {
                     unstable = import inputs.nixpkgs-unstable {
+                      inherit (pkgs.stdenv.hostPlatform) system;
                       inherit (pkgs) config;
-                      inherit (pkgs.hostPlatform) system;
                     };
                   };
                 }
