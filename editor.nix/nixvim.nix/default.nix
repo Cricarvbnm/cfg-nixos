@@ -32,15 +32,21 @@
 
   keymaps = [
     {
-      options.desc = "Quit";
-      key = "<Leader>q";
+      options.desc = "Quit (close current window)";
+      key = "<Leader>qq";
       action = "<Cmd>q<CR>";
       mode = [ "n" ];
     }
     {
-      options.desc = "Force Quit";
-      key = "<Leader>Q";
-      action = "<Cmd>q!<CR>";
+      options.desc = "Write & quit (save and close)";
+      key = "<Leader>qw";
+      action = "<Cmd>wq<CR>";
+      mode = [ "n" ];
+    }
+    {
+      options.desc = "Force quit all (discard all changes)";
+      key = "<Leader>qQ";
+      action = "<Cmd>qa!<CR>";
       mode = [ "n" ];
     }
 
