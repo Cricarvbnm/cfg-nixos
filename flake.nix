@@ -3,6 +3,7 @@
     self.submodules = true;
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
@@ -65,6 +66,18 @@
         nixosConfigurations = {
           alec-nixos = nixpkgs.lib.nixosSystem {
             modules = [
+              (
+                { inputs, ... }:
+                {
+                  nixpkgs.config.packageOverrides = pkgs: {
+                    unstable = import inputs.nixpkgs-unstable {
+                      inherit (pkgs) config;
+                      inherit (pkgs.hostPlatform) system;
+                    };
+                  };
+                }
+              )
+
               ./configuration.nix
 
               home-manager.nixosModules.home-manager
