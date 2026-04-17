@@ -9,5 +9,6 @@
 
     # Python
     uv
+    python3
   ];
 }
