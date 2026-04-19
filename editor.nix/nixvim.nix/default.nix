@@ -23,6 +23,8 @@
 
     list = true;
     listchars = "tab:<->,trail:-,nbsp:+";
+
+    foldmethod = "marker";
   };
 
   clipboard = {
