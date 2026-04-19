@@ -1,9 +1,8 @@
 {
-  imports = [ ./nh.nix ];
-
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
+  imports = [
+    ./nixpkgs.nix
+    ./nh.nix
+  ];
 
   nix.gc = {
     automatic = true;

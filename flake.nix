@@ -71,20 +71,6 @@
         nixosConfigurations = {
           alec-nixos = nixpkgs.lib.nixosSystem {
             modules = [
-              # Add unstable nixpkgs to `pkgs`{{{
-              (
-                { inputs, ... }:
-                {
-                  nixpkgs.config.packageOverrides = pkgs: {
-                    unstable = import inputs.nixpkgs-unstable {
-                      inherit (pkgs.stdenv.hostPlatform) system;
-                      inherit (pkgs) config;
-                    };
-                  };
-                }
-              )
-              # }}}
-
               ./configuration.nix
 
               # Home-Manager Initialization{{{
