@@ -4,6 +4,7 @@ let
     nixpkgs: extraArgs:
     import nixpkgs {
       inherit (pkgs.stdenv.hostPlatform) system;
+      inherit (pkgs) config;
     }
     // extraArgs;
 in
