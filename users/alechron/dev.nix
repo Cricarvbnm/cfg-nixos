@@ -2,6 +2,6 @@
 {
   programs.opencode = {
     enable = true;
-    package = pkgs.unstable.opencode;
+    package = pkgs.pin-7171.opencode;
   };
 }

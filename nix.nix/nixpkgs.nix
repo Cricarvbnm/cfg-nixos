@@ -21,6 +21,11 @@ in
         };
         inherit (branches) unstable;
         # }}}
+
+        # Nixpkgs Pins{{{
+        pin-36a6 = callNixpkgs inputs.nixpkgs-36a6 { };
+        pin-7171 = callNixpkgs inputs.nixpkgs-7171 { };
+        # }}}
       })
     ];
   };

@@ -1,7 +1,11 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  ...
+}:
 {
   environment.systemPackages = with pkgs; [
-    winboat
+    pin-36a6.winboat
     docker-compose
   ];
 

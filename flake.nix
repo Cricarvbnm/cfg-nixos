@@ -9,6 +9,13 @@
     # Nixpkgs{{{
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs";
+
+    # Nixpkgs Pins{{{
+    # nixpkgs/nixos-25.11
+    nixpkgs-36a6.url = "github:NixOS/nixpkgs/36a601196c4ebf49e035270e10b2d103fe39076b";
+    # nixpkgs
+    nixpkgs-7171.url = "github:NixOS/nixpkgs/717151106d79681eb9ef82fa28bef5f05a94e591";
+    # }}}
     # }}}
 
     home-manager = {
