@@ -2,17 +2,21 @@
   inputs = {
     self.submodules = true;
 
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    flake-parts.url = "github:hercules-ci/flake-parts";
+    # Nixpkgs{{{
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs";
+    # }}}
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Others{{{
     nixvim = {
       url = "github:nix-community/nixvim/nixos-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,6 +29,7 @@
         home-manager.follows = "home-manager";
       };
     };
+    # }}}
   };
 
   outputs =
@@ -66,6 +71,7 @@
         nixosConfigurations = {
           alec-nixos = nixpkgs.lib.nixosSystem {
             modules = [
+              # Add unstable nixpkgs to `pkgs`{{{
               (
                 { inputs, ... }:
                 {
@@ -77,11 +83,14 @@
                   };
                 }
               )
+              # }}}
 
               ./configuration.nix
 
+              # Home-Manager Initialization{{{
               home-manager.nixosModules.home-manager
               ./users/home-manager.nix
+              # }}}
             ];
             specialArgs = {
               inherit inputs;
