@@ -81,14 +81,7 @@
               ./configuration.nix
 
               home-manager.nixosModules.home-manager
-              {
-                home-manager = {
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
-                  extraSpecialArgs = { inherit inputs; };
-                  users.alechron = ./users/alechron/home.nix;
-                };
-              }
+              ./users/home-manager.nix
             ];
             specialArgs = {
               inherit inputs;
