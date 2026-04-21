@@ -5,7 +5,10 @@
   ...
 }:
 {
-  lsp.servers.pyright.enable = true;
+  lsp.servers = {
+    pyright.enable = true;
+    ruff.enable = true;
+  };
 
   plugins.lint = {
     lintersByFt.python = [ "pylint" ];
